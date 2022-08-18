@@ -226,7 +226,7 @@ problem4 :-
 % ============================================================================
 % ---------------------------- 5 -------------------------------- %
 
-% Area and perimeter of a square
+% Area and perimeter of a cirlce
 
 % Rules
 areaOfCircle(Radius, Area) :-
