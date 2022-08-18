@@ -106,6 +106,20 @@ union([H|T], L2, [H|L]) :- \+ is_member(H, L2), union(T, L2, L).
 
 
 % intersection
+intersection([], _, []).
+intersection([X|Y], M, [X|Z]) :- 
+    is_member(X, M), 
+    intersection(Y, M, Z).
+intersection([X|Y], M, Z) :-
+    \+ is_member(X, M),
+    intersection(Y, M, Z).
 
 
-% intersection
+% difference
+difference([], _, []).
+difference([X|Y], M, [X|Z]) :- 
+    \+ is_member(X, M), 
+    difference(Y, M, Z).
+difference([X|Y], M, Z) :-
+    is_member(X, M),
+    difference(Y, M, Z).
